@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>H5标签框架布局</title>
+	<style type="text/css">
+		header{
+			width: 1000px;
+			height: 50px;
+			background: black;
+		}
+		main{
+			width: 1000px;
+			height:600px;
+			background: yellow;
+		}
+		aside{
+			float: left;
+			width: 100px;
+			height: 600px;
+			background: gold;
+		}
+		article{
+			float: left;
+			width: 900px;
+			height: 600px;
+			/*margin-left:100px;*/
+			background: skyblue;
+		}
+		/*清除浮动*/
+		.clear{
+			content: "";
+			clear:both;
+		}
+
+		footer{
+			width: 1000px;
+			height: 50px;
+			background: gainsboro;
+		}
+	</style>
+	</head>
+	<body>
+		<header>头部</header>
+		<main>
+			<aside>侧边框</aside>
+			<article>文章
+			  <p>no.1</p>
+			  <p>no.2</p>
+			  <p>no.3</p>
+			  <p>no.4</p>
+			  <p>no.5</p>
+			</article>
+		</main>
+		<div class="clear">
+			
+		</div>
+		
+		<footer>尾部</footer>
+	</body>
+</html>
