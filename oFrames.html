@@ -11,7 +11,7 @@
 		}
 		main{
 			width: 1000px;
-			height:600px;
+			/*height:600px;*/
 			background: yellow;
 		}
 		aside{
@@ -27,7 +27,7 @@
 			/*margin-left:100px;*/
 			background: skyblue;
 		}
-		/*清除浮动*/
+		/*清除浮动：外墙法*/
 		.clear{
 			content: "";
 			clear:both;
@@ -51,10 +51,12 @@
 			  <p>no.4</p>
 			  <p>no.5</p>
 			</article>
+		<!--内墙法-->
+		<div class="clear"></div>
 		</main>
-		<div class="clear">
-			
-		</div>
+		
+		<!--外墙法-->
+		<!--<div class="clear"></div>-->
 		
 		<footer>尾部</footer>
 	</body>
