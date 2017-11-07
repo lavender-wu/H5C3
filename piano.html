@@ -4,7 +4,91 @@
 		<meta charset="UTF-8">
 		<title>钢琴</title>
 	</head>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			float: left;
+			list-style: none ;
+			margin-left: 30px;
+			margin-top: 10px;
+			width: 150px;
+			height: 100px;
+			background: gold;
+		}
+	</style>
 	<body>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<audio src="mp3/1.mp3"></audio>
+		<audio src="mp3/2.mp3"></audio>
+		<audio src="mp3/3.mp3"></audio>
+		<audio src="mp3/4.mp3"></audio>
+		<audio src="mp3/5.mp3"></audio>
+		<audio src="mp3/6.mp3"></audio>
+		<audio src="mp3/7.mp3"></audio>
+		
 		<script src="js/jquery-3.2.1.js"></script>
+		<script type="text/javascript">
+			
+	
+/*	1.鼠标移入
+ 思路：
+		*  1. 给所有 li 绑定鼠标移入事件
+		*  2. 获取移入的下标
+		*  3. 播放对应下标的音乐
+		*/
+//* 方法1.jQuery库写
+		$("li").mouseover(function(){
+			var i=$(this).index();
+			var music=$("audio").get(i);//等价var music=$("audio").eq(i).get(0);
+			music.load();
+			music.play();
+			$(this).css("background","red").siblings()//.css("background","gold")排他
+		})
+		$("li").mouseleave(function(){
+			$(this).css("background","gold")
+		}) //*/
+		
+		/*
+//	方法2.原生代码写	    获取所有li标签
+		  var oLi=document.getElementsByTagName("li");
+		  var index;
+		  for(var i=0; i<oLi.length;i++){
+		  	index=i;
+		  	oLi[i].onmouseover=function(){
+		  	//保存点击的下标
+				console.log(index);
+		    }
+		  }*/
+		 
+//2.键盘控制
+/* 思路：
+ *1. 给整个页面绑定键盘按下事件
+ *2. 获取对应音乐下标
+ *3. 播放对应下标的音乐
+ */	 	
+ 		$(document).keydown(function(e){
+ 			
+ 			var i=e.keyCode-49;//从0开始：0==>49,1==>50 ...
+ 			
+ 			$("audio").get(i).load();
+ 			$("audio").get(i).play();
+ 			
+ 		})
+ 	
+ //3.本地存储
+ 		
+		</script>
+		
 	</body>
 </html>
